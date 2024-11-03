@@ -14,6 +14,7 @@ const config: Config = {
       },
       fontFamily: {
         nanum: ['"NanumSquareNeo"', "sans-serif"],
+        mulgyeol: ["HakgyoansimMulgyeol", "sans-serif"],
       },
     },
   },
