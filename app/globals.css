@@ -1,0 +1,504 @@
+@import url("https://websseu.github.io/fontkor/fonts/NanumSquareNeo/NanumSquareNeo.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.circle {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-image: linear-gradient(#e7e7e7, #d7d7d7);
+}
+
+.clock-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 35vw;
+  height: 35vw;
+  padding: 1vw;
+  background-image: linear-gradient(#f7f7f7, #e0e0e0);
+  border-radius: 50%;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+.clock-base {
+  width: 33vw;
+  height: 33vw;
+  background-color: #eee;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #eee;
+  position: relative;
+}
+.clock-center {
+  position: absolute;
+  z-index: 1;
+  width: 20vw;
+  height: 20vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: linear-gradient(#e3e3e3, #f7f7f7);
+  border-radius: 50%;
+}
+.clock-center:after {
+  content: "";
+  display: block;
+  width: 2vw;
+  height: 2vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ddd;
+  border-radius: 50%;
+}
+.clock-hour {
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 3vw);
+  left: 50%;
+  width: 0.4vw;
+  height: 6vw;
+  background-color: #555;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  transform-origin: center bottom;
+  transition: rotate 0.5s;
+}
+.clock-hour::after {
+  content: "";
+  width: 0.4vw;
+  height: 2vw;
+  position: absolute;
+  left: 0;
+  bottom: -1vw;
+  border-radius: 5px;
+  background-color: #555;
+}
+.clock-minute {
+  position: absolute;
+  z-index: 3;
+  top: calc(50% - 4.5vw);
+  left: 50%;
+  width: 0.4vw;
+  height: 9vw;
+  background-color: #555;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  transform-origin: center bottom;
+  transition: rotate 0.5s;
+}
+.clock-minute::after {
+  content: "";
+  width: 0.4vw;
+  height: 2vw;
+  position: absolute;
+  left: 0;
+  bottom: -1vw;
+  border-radius: 5px;
+  background-color: #555;
+}
+.clock-second {
+  position: absolute;
+  z-index: 4;
+  top: calc(50% - 6.5vw);
+  left: 50%;
+  width: 2px;
+  height: 13vw;
+  background-color: #a00;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  border-radius: 1px;
+  transform-origin: center bottom;
+  transition: rotate 0.5s;
+}
+.clock-second:after {
+  content: "";
+  position: absolute;
+  left: -0.5vw;
+  bottom: -0.5vw;
+  width: 1vw;
+  height: 1vw;
+  background-color: rgba(170, 0, 0, 1);
+  border-radius: 50%;
+}
+.clock-dial {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30vw;
+  height: 30vw;
+  z-index: 100;
+}
+.clock-dial .clock-indicator {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 3px;
+  height: 6px;
+  background-color: #ddd;
+}
+@media (max-width: 768px) {
+  .clock-dial .clock-indicator {
+    width: 2px;
+    height: 4px;
+  }
+}
+
+.clock-indicator:nth-child(1) {
+  transform: rotate(30deg) translateY(-15vw);
+}
+.clock-indicator:nth-child(2) {
+  transform: rotate(60deg) translateY(-15vw);
+}
+.clock-indicator:nth-child(3) {
+  transform: rotate(90deg) translateY(-15vw);
+  background-color: #aaa;
+}
+.clock-indicator:nth-child(4) {
+  transform: rotate(120deg) translateY(-15vw);
+}
+.clock-indicator:nth-child(5) {
+  transform: rotate(150deg) translateY(-15vw);
+}
+.clock-indicator:nth-child(6) {
+  transform: rotate(180deg) translateY(-15vw);
+  background-color: #aaa;
+}
+.clock-indicator:nth-child(7) {
+  transform: rotate(210deg) translateY(-15vw);
+}
+.clock-indicator:nth-child(8) {
+  transform: rotate(240deg) translateY(-15vw);
+}
+.clock-indicator:nth-child(9) {
+  transform: rotate(270deg) translateY(-15vw);
+  background-color: #aaa;
+}
+.clock-indicator:nth-child(10) {
+  transform: rotate(300deg) translateY(-15vw);
+}
+.clock-indicator:nth-child(11) {
+  transform: rotate(330deg) translateY(-15vw);
+}
+.clock-indicator:nth-child(12) {
+  transform: rotate(360deg) translateY(-15vw);
+  background-color: #c00;
+}
+
+/* clock2 */
+.clock2 {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #27292a;
+}
+.clock__wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 35vw;
+  height: 35vw;
+  background-color: #ccc;
+  border-radius: 50%;
+  box-shadow: inset 0.05vw -0.05vw 0 #333, /*ccc*/ inset 0.17vw -0.17vw 0 #555,
+    inset -0.03vw -0.04vw 0 #333, /*999*/ inset -0.03vw 0.02vw 0 #333,
+    /*ccc*/ inset -0.1vw -0.1vw 0 #555, 0.1vw 0.3vw 0.2vw rgba(0, 0, 0, 0.3);
+}
+.clock__circle1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 34vw;
+  height: 34vw;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: inset 0.04vw 0 0 #fff, inset 0 -0.06vw 0 #ddd,
+    inset 0.16vw -0.08vw 0 #222, inset -0.16vw 0.08vw 0 #222,
+    inset 0.2vw 0.2vw 0 #222, 0.06vw -0.03vw 0 #999, -0.1vw 0.1vw 0 #777,
+    -0.13vw -0.2vw 0 #fff, 0.13vw 0.2vw 0 #222, 0.13vw 0.3vw 0 #333;
+}
+.clock__circle2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 33vw;
+  height: 33vw;
+  background-color: #eed;
+  border-radius: 50%;
+  box-shadow: inset 0.15vw 0.2vw 0.05vw rgba(0, 0, 0, 0.4),
+    inset 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.3),
+    inset 0 0.05vw 0.3vw rgba(0, 0, 0, 0.1), -0.16vw 0.08vw 0 #444,
+    0.16vw -0.08vw 0 #444;
+}
+
+.clock__circle2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 32vw;
+  height: 32vw;
+  background-color: #eed;
+  border-radius: 50%;
+  box-shadow: inset 0.15vw 0.2vw 0.05vw rgba(0, 0, 0, 0.4),
+    inset 0.2vw 0.4vw 0.2vw rgba(0, 0, 0, 0.3),
+    inset 0 0.05vw 0.3vw rgba(0, 0, 0, 0.1), -0.16vw 0.08vw 0 #444,
+    0.16vw -0.08vw 0 #444;
+}
+
+.clock__circle3 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 29vw;
+  height: 29vw;
+  border-radius: 50%;
+}
+.clock__circle3 > .dot {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.clock__circle3 > .dot > span {
+  width: 5px;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.clock__circle3 > .dot > span::before {
+  content: "";
+  width: 100%;
+  height: 1vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #000;
+}
+.clock__circle3 > .dot > span::after {
+  content: "";
+  width: 100%;
+  height: 1vw;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #000;
+}
+
+.clock__circle3 > .dot > span:nth-child(1) {
+  transform: rotate(30deg);
+}
+.clock__circle3 > .dot > span:nth-child(2) {
+  transform: rotate(60deg);
+}
+.clock__circle3 > .dot > span:nth-child(3) {
+  transform: rotate(90deg);
+}
+.clock__circle3 > .dot > span:nth-child(4) {
+  transform: rotate(120deg);
+}
+.clock__circle3 > .dot > span:nth-child(5) {
+  transform: rotate(150deg);
+}
+.clock__circle3 > .dot > span:nth-child(6) {
+  transform: rotate(180deg);
+}
+.clock__circle3 > .dot > span:nth-child(7) {
+  transform: rotate(6deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(8) {
+  transform: rotate(12deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(9) {
+  transform: rotate(18deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(10) {
+  transform: rotate(24deg);
+  width: 1px;
+}
+
+.clock__circle3 > .dot > span:nth-child(11) {
+  transform: rotate(36deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(12) {
+  transform: rotate(42deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(13) {
+  transform: rotate(48deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(14) {
+  transform: rotate(54deg);
+  width: 1px;
+}
+
+.clock__circle3 > .dot > span:nth-child(15) {
+  transform: rotate(66deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(16) {
+  transform: rotate(72deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(17) {
+  transform: rotate(78deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(18) {
+  transform: rotate(84deg);
+  width: 1px;
+}
+
+.clock__circle3 > .dot > span:nth-child(19) {
+  transform: rotate(96deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(20) {
+  transform: rotate(102deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(21) {
+  transform: rotate(108deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(22) {
+  transform: rotate(114deg);
+  width: 1px;
+}
+
+.clock__circle3 > .dot > span:nth-child(23) {
+  transform: rotate(126deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(24) {
+  transform: rotate(132deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(25) {
+  transform: rotate(138deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(26) {
+  transform: rotate(144deg);
+  width: 1px;
+}
+
+.clock__circle3 > .dot > span:nth-child(27) {
+  transform: rotate(156deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(28) {
+  transform: rotate(162deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(29) {
+  transform: rotate(168deg);
+  width: 1px;
+}
+.clock__circle3 > .dot > span:nth-child(30) {
+  transform: rotate(174deg);
+  width: 1px;
+}
+.clock__circle4 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 27vw;
+  height: 27vw;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+.clock__circle4 .number {
+  width: 100%;
+  height: 100%;
+}
+.clock__circle4 .number span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  margin: 0;
+  margin: auto;
+  width: 30px;
+  height: 100%;
+}
+.clock__circle4 .number span i {
+  font-style: normal;
+  font-size: 3vw;
+  line-height: 1;
+}
+.clock__circle4 .number span i:first-child {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+.clock__circle4 .number span i:last-child {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+.clock__circle4 .number span:nth-child(2) {
+  transform: rotate(30deg);
+}
+.clock__circle4 .number span:nth-child(2) i {
+  transform: rotate(-30deg);
+}
+.clock__circle4 .number span:nth-child(3) {
+  transform: rotate(60deg);
+}
+.clock__circle4 .number span:nth-child(3) i {
+  transform: rotate(-60deg);
+}
+.clock__circle4 .number span:nth-child(4) {
+  transform: rotate(90deg);
+}
+.clock__circle4 .number span:nth-child(4) i {
+  transform: rotate(-90deg);
+}
+.clock__circle4 .number span:nth-child(5) {
+  transform: rotate(120deg);
+}
+.clock__circle4 .number span:nth-child(5) i {
+  transform: rotate(-120deg);
+}
+.clock__circle4 .number span:nth-child(6) {
+  transform: rotate(150deg);
+}
+.clock__circle4 .number span:nth-child(6) i {
+  transform: rotate(-150deg);
+}
